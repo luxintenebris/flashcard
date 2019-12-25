@@ -1,2 +1,2 @@
-# cls-sty-templ
-Template repository for developing tex classes and packages. 
+# tex-card
+LaTex class for creating Q&A flashcards. 
