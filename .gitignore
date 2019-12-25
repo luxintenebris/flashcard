@@ -12,6 +12,9 @@
 *.cb2
 .*.lb
 
+## Custom auxiliary files:
+*.crd
+
 ## Intermediate documents:
 *.dvi
 *.xdv

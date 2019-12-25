@@ -17,7 +17,7 @@
 %
 %		Document state:	Development
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{flashcard}[2019/12/24 v0.1 Class for creating Q&A flashcards.]
@@ -44,17 +44,16 @@
 %% Load additional packages
 \RequirePackage[a6paper, landscape, top=16mm, right=5mm, left=5mm]{geometry}
 \RequirePackage{fancyhdr}
+\RequirePackage{tocloft}
 
 %% Additional TeX/LaTeX code...
-
-\newcounter{cardcounter}
 
 \pagestyle{fancy} 
 \fancyhf{} 
 \fancyhead[OL]{\leftmark} 
 \fancyhead[OC]{\emph{Question}} 
 \fancyhead[EC]{\emph{Answer}}
-\fancyhead[OR]{\#\arabic{cardcounter}}
+\fancyhead[OR]{\#\arabic{card}}
 %\renewcommand{\headrulewidth}{1.0pt}
 
 \renewcommand{\sectionmark}[1]{\markboth{#1}{}}
@@ -64,12 +63,16 @@
   \addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}%
   \sectionmark{#1}}
 
+\newlistof{card}{crd}{List of cards}
+
 \newenvironment{card}[1]{
-	\stepcounter{cardcounter}
+	\refstepcounter{card}
 	\vspace*{\fill}
 	\begin{center}\LARGE{#1}\end{center}
 	\vspace*{\fill}
 	\newpage
+    \addcontentsline{crd}{card}
+    {\protect\numberline{\#\thecard} #1}\par
 }
 {\newpage}
 
