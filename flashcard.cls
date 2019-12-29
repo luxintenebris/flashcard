@@ -72,7 +72,7 @@
 	\vspace*{\fill}
 	\newpage
     \addcontentsline{crd}{card}
-    {\protect\numberline{\#\thecard} #1}\par
+    {\#\protect\numberline{\thecard} #1}\par
 }
 {\newpage}
 
