@@ -42,7 +42,7 @@
 \LoadClass[twoside]{article}
 
 %% Load additional packages
-\RequirePackage[a6paper, landscape, top=16mm, right=5mm, left=5mm]{geometry}
+\RequirePackage[a6paper, landscape, top=15mm, right=10mm, left=10mm]{geometry}
 \RequirePackage{fancyhdr}
 \RequirePackage{tocloft}
 \RequirePackage{makeidx}
@@ -69,13 +69,21 @@
 
 \newenvironment{card}[1]{
 	\refstepcounter{card}
+	\noindent
+	\begin{minipage}[t][0.95\textheight][t]{\textwidth}
 	\vspace*{\fill}
 	\begin{center}\LARGE{#1}\end{center}
 	\vspace*{\fill}
+	\end{minipage}
 	\newpage
     \addcontentsline{crd}{card}
     {\#\protect\numberline{\thecard} #1}\par
+    \noindent
+	\begin{minipage}[t][0.95\textheight][t]{\textwidth}
 }
-{\newpage}
+{
+\end{minipage}
+\newpage
+}
 
 \endinput

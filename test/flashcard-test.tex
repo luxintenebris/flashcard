@@ -1,22 +1,36 @@
 \documentclass{../flashcard}
 
+\usepackage{blindtext}
+
 \makeindex
 
 \begin{document}
 
-\section{Don't panic!}
+\section{Flashcard Test}
 
-\begin{card}{What is the answer to everything?}
-\index{Answer to everything}
-The answer to everything is 42.
+\begin{card}{Normal question test}
+\index{Normal Question test}
+Answer to normal question.
 \end{card}
 
 \setcounter{card}{100}
 
-\begin{card}{How many heads does Zaphod Beeblebrox have?}
-\index{Zaphod!appearance}
-Zaphod has two heads.
+\begin{card}{Set counter to 100 test}
+\index{Counter test}
+Answer.
 \end{card}
+
+
+\begin{card}{Exceed textheight test}
+\index{Exceed textheight test}
+\footnotesize
+\blindtext[4]
+\end{card}
+
+\begin{card}{Card after "Exceed textheight test" test}
+Answer.
+\end{card}
+
 
 \listofcard
 
