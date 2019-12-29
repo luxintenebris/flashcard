@@ -45,6 +45,8 @@
 \RequirePackage[a6paper, landscape, top=16mm, right=5mm, left=5mm]{geometry}
 \RequirePackage{fancyhdr}
 \RequirePackage{tocloft}
+\RequirePackage{makeidx}
+\RequirePackage{hyperref}
 
 %% Additional TeX/LaTeX code...
 
