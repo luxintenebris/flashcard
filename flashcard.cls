@@ -2,13 +2,11 @@
 %
 % 		Filename:		flashcard.cls
 %
-% 		Project:		tex-card
+% 		Project:		flashcard
 %
 % 		Author:			Andreas L. Duschl <<andreas.duschl@luxintenebris.de>>
 %
-% 		Affiliation:	____________________
-%		
-%		Copyright:		____________________
+% 		Affiliation:
 %
 %		Description:
 %		Class for creating Q&A flashcards.
