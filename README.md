@@ -1,2 +1,2 @@
 # tex-card
-LaTex class for creating Q&A flashcards. 
+LaTeX class for creating Q&A flashcards. 
