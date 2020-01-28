@@ -1,4 +1,4 @@
-% file comment %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% File comment %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % 		Filename:		flashcard.cls
 %
@@ -6,7 +6,6 @@
 %
 % 		Author:			Andreas L. Duschl <<andreas.duschl@luxintenebris.de>>
 %
-% 		Affiliation:
 %
 %		Description:
 %		Class for creating Q&A flashcards.
@@ -18,7 +17,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{flashcard}[2019/12/24 v0.1 Class for creating Q&A flashcards.]
+\ProvidesClass{flashcards}[2019/12/24 v0.1 Class for creating Q&A flashcards.]
 
 %% Base class options
 %\DeclareOption{}{
