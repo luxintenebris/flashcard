@@ -1,8 +1,8 @@
 % File comment %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% 		Filename:		flashcard.cls
+% 		Filename:		flashcards.cls
 %
-% 		Project:		flashcard
+% 		Project:		flashcards
 %
 % 		Author:			Andreas L. Duschl <<andreas.duschl@luxintenebris.de>>
 %
