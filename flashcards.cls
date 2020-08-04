@@ -44,6 +44,7 @@
 \RequirePackage{tocloft}
 \RequirePackage{makeidx}
 \RequirePackage{hyperref}
+\RequirePackage[fit]{truncate}
 
 %% Additional TeX/LaTeX code...
 
@@ -74,7 +75,7 @@
 	\end{minipage}
 	\newpage
     \addcontentsline{crd}{card}
-    {\#\protect\numberline{\thecard} #1}\par
+    {\#\protect\numberline{\thecard} \truncate[ {[}\dots{]}]{0.75\textwidth}{#1}}\par
     \noindent
 	\begin{minipage}[t][0.95\textheight][t]{\textwidth}
 }
