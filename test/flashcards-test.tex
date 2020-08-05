@@ -1,5 +1,7 @@
 \documentclass{../flashcards}
 
+\usepackage{graphicx}
+
 \usepackage{blindtext}
 
 \makeindex
@@ -18,19 +20,48 @@ The next card is empty on purpose.
 
 \end{card}
 
-\setcounter{card}{100}
-\begin{card}{After Set counter to 100 test.}
-\index{Counter test}
-Answer.
+\begin{card}{Question and answer with picture test. Bug: Pictures in Question not possible.}
+\index{Picture test}
+Answer with picture.\\[0.5cm]
+\begin{center}
+\includegraphics[scale=0.5]{gradient.png} 
+\end{center}
 \end{card}
 
-\begin{card}{Exceed textheight test.}
+\begin{card}{Question and answer with forula test. $E=mc^2$}
+\index{Formula test}
+Answer with formula. $$E=mc^2$$
+\end{card}
+
+\begin{card}{Question and answer with enumeration test. Bug: Enumeration in question not possible}
+\index{Enumeration test}
+\begin{enumerate}
+\item Answer
+\item Answer
+\item Answer
+\item ...
+\end{enumerate}
+\end{card}
+
+\setcounter{card}{99}
+\begin{card}{After setting the card counter to 99 test.}
+\index{Set counter test}
+The card number must be \#100 .
+\end{card}
+
+\stepcounter{card}
+\begin{card}{After incrementing the card counter test.}
+\index{Increment counter test}
+The card number must be \#102 .
+\end{card}
+
+\begin{card}{Exceed answer text height test.}
 \index{Exceed textheight test}
 \footnotesize
 \blindtext[4]
 \end{card}
 
-\begin{card}{Card after "Exceed textheight test" test.}
+\begin{card}{Card after "Exceed answer text height test." test.}
 Answer.
 \end{card}
 
