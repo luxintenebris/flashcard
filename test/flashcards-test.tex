@@ -10,88 +10,152 @@
 
 \section{Flashcards Test}
 
-\begin{card}{Normal question test.}
-\index{Normal Question test}
+\addcard
+{
+Normal Question test
+}
+{
 Answer to normal question.\\
 The next card is empty on purpose.
-\end{card}
+}
 
-\begin{card}{}
+\addcard{}{}
 
-\end{card}
-
-\begin{card}
-[
+\addcard[Question and answer with picture test.]
+{
+\index{Picture test}
+Question and answer with picture test.
 \begin{center}
 {\includegraphics[scale=0.5]{gradient.png}}
 \end{center}
-]
-{Question and answer with picture test.}
-\index{Picture test}
+}
+{
 Answer with picture.\\[0.5cm]
 \begin{center}
 \includegraphics[scale=0.5]{gradient.png}
 \end{center}
-\end{card}
+}
 
-\begin{card}[$$E=mc^2$$]{Question and answer with formula test.}
+\addcard[Question and answer with formula test.]
+{
 \index{Formula test}
+Question and answer with formula test. $$E=mc^2$$
+}
+{
 Answer with formula. $$E=mc^2$$
-\end{card}
+}
 
-\begin{card}
-[
+Not using \verb|\addcard| test 1.
+
+\addcard[Question and answer with enumeration test.]
+{
+\index{Enumeration test}
+Question and answer with enumeration test.
 \begin{itemize}
 \item Question \#1
 \item Question \#2
 \item Question \#3
 \item ...
 \end{itemize}
-]
-{Question and answer with enumeration test.}
-\index{Enumeration test}
+}
+{
 \begin{enumerate}
 \item Answer \#1
 \item Answer \#2
 \item Answer \#3
 \item ...
 \end{enumerate}
-\end{card}
+}
 
-\setcounter{card}{99}
-\begin{card}{After setting the card counter to 99 test.}
+Not using \verb|\addcard| test 2. \newpage
+
+\setcounter{cards}{99}
+\addcard
+{
 \index{Set counter test}
+After setting the card counter to 99 test.
+}
+{
 The card number must be \#100 .
-\end{card}
+}
 
-\stepcounter{card}
-\begin{card}{After incrementing the card counter test.}
+\stepcounter{cards}
+\addcard
+{
 \index{Increment counter test}
+After incrementing the card counter test.
+}
+{
 The card number must be \#102 .
-\end{card}
+}
 
-\begin{card}{Exceed answer text height test.}
+\addcard
+{
 \index{Exceed textheight test}
-\footnotesize
-\blindtext[4]
-\end{card}
+Exceed answer text height test.
+}
+{
+\blindtext[3]
+}
 
-\begin{card}{Card after "Exceed answer text height test." test.}
+\addcard
+{
+Card after "Exceed answer text height test." test.
+}
+{
 Answer.
-\end{card}
+}
+
+\addcard
+{
+\index{Set font size of answer text test}
+Set font size of answer text test.
+}
+{
+\footnotesize
+\blindtext[3]
+}
+
+\addcard
+{
+\index{Set font size of question text test}
+Set font size of question text test.\\
+\footnotesize
+\blindtext[2]
+}
+{
+Answer.
+}
 
 \section{New scetion}
-\begin{card}{New scetion test.}
+\addcard
+{
 \index{New scetion test}
+New scetion test.
+}
+{
 Answer.
-\end{card}
+}
 
 \section{Flashcards Test}
-\begin{card}{Back to old section test.}
+\addcard
+{
+Back to old section test.
+}
+{
 Answer.
-\end{card}
+}
 
-\listofcard
+\addcard[If this text appears in the toc the test was successfull]
+{
+\index{Optional argument test}
+Set card entry via optional argument test.
+}
+{
+Answer.
+}
+
+\listofcards
 
 \printindex
 

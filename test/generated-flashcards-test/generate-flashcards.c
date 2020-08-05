@@ -10,39 +10,27 @@ int main(void)
 		return EXIT_FAILURE;
 	}
 	
-	fputs("\\documentclass{../../flashcards}\n", fp);
-	fputs("\\usepackage{blindtext}\n", fp);
-	fputs("\\makeindex\n", fp);
-	fputs("\\begin{document}\n", fp);
-	fputs("\\section{Generated Flashcards Test}\n", fp);
+	fputs("\\documentclass{../../flashcards}\n\n", fp);
+	fputs("\\usepackage{blindtext}\n\n", fp);
+	fputs("\\begin{document}\n\n", fp);
+	fputs("\\section{Generated Flashcards Test}\n\n", fp);
 	
 	for (int i=0; i<25; i++) {
-		fputs("\n\\begin{card}{Normal question.}\n", fp);
-		fputs("Answer to normal question.\n", fp);
-		fputs("\\end{card}\n\n", fp);
+		fputs("\\addcard{Normal question.}{Answer to normal question.}\n\n", fp);
+		fputs("\\addcard{\\blindtext[4]}{\\blindtext[4]}\n\n", fp);
+	}
+	
+	for (int i=0; i<25; i++) {
+		fputs("\\addcard{\\blindtext[4]}{\\blindtext[4]}\n\n", fp);
+	}
+	
+	for (int i=0; i<25; i++) {
+		fputs("\\addcard{Normal question.}{Answer to normal question.}\n\n", fp);
+	}
+	
+	fputs("\\listofcards\n\n", fp);
 		
-		fputs("\n\\begin{card}{\\blindtext[4]}\n", fp);
-		fputs("\\blindtext[4]\n", fp);
-		fputs("\\end{card}\n\n", fp);
-	}
-	
-	for (int i=0; i<25; i++) {
-		fputs("\n\\begin{card}{\\blindtext[4]}\n", fp);
-		fputs("\\blindtext[4]\n", fp);
-		fputs("\\end{card}\n\n", fp);
-	}
-	
-	for (int i=0; i<25; i++) {
-		fputs("\n\\begin{card}{Normal question.}\n", fp);
-		fputs("Answer to normal question.\n", fp);
-		fputs("\\end{card}\n\n", fp);
-	}
-	
-	fputs("\\listofcard\n", fp);
-	
-	fputs("\\printindex\n", fp);
-		
-	fputs("\\end{document}\n", fp);
+	fputs("\\end{document}", fp);
 	
 	fclose(fp);
 	

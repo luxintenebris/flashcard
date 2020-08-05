@@ -45,6 +45,7 @@
 \RequirePackage{makeidx}
 \RequirePackage{hyperref}
 \RequirePackage[fit]{truncate}
+\RequirePackage{xifthen}
 
 %% Additional TeX/LaTeX code...
 
@@ -53,36 +54,41 @@
 \fancyhead[OL]{\leftmark} 
 \fancyhead[OC]{\emph{Question}} 
 \fancyhead[EC]{\emph{Answer}}
-\fancyhead[OR]{\#\arabic{card}}
+\fancyhead[OR]{\#\arabic{cards}}
 %\renewcommand{\headrulewidth}{1.0pt}
 
 \renewcommand{\sectionmark}[1]{\markboth{#1}{}}
-
 \renewcommand\section[1]{%
   \refstepcounter{section}%
   \addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}%
   \sectionmark{#1}}
 
-\newlistof{card}{crd}{List of cards}
+\newlistof{cards}{crd}{List of cards}
 
-\newenvironment{card}[2][]{
-	\refstepcounter{card}
+\newcommand*\cleartoleftpage{%
+  \clearpage
+  \ifthenelse{\isodd{\value{page}}}{}{\hbox{}\newpage}
+}
+
+\newcommand{\addcard}[3][]{
+	\refstepcounter{cards}
+	\ifthenelse{\isempty{#1}}
+	{\addcontentsline{crd}{cards}{\#\protect\numberline{\thecards} \truncate[ {[}\dots{]}]{0.75\textwidth}{#2}}}
+	{\addcontentsline{crd}{cards}{\#\protect\numberline{\thecards} \truncate[ {[}\dots{]}]{0.75\textwidth}{#1}}}
+	\cleartoleftpage
 	\noindent
-	\begin{minipage}[t][0.95\textheight][t]{\textwidth}
+	\begin{minipage}[t][0.95\textheight][t]{\textwidth}% question
 	\vspace*{\fill}
 	\begin{center}\LARGE{#2}\end{center}
-	#1
 	\vspace*{\fill}
 	\end{minipage}
 	\newpage
-    \addcontentsline{crd}{card}
-    {\#\protect\numberline{\thecard} \truncate[ {[}\dots{]}]{0.75\textwidth}{#2}}\par
+	\par
     \noindent
-	\begin{minipage}[t][0.95\textheight][t]{\textwidth}
-}
-{
-\end{minipage}
-\newpage
+	\begin{minipage}[t][0.95\textheight][t]{\textwidth}%  answer
+	#3
+	\end{minipage}
+	\newpage
 }
 
 \endinput
