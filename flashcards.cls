@@ -65,17 +65,18 @@
 
 \newlistof{card}{crd}{List of cards}
 
-\newenvironment{card}[1]{
+\newenvironment{card}[2][]{
 	\refstepcounter{card}
 	\noindent
 	\begin{minipage}[t][0.95\textheight][t]{\textwidth}
 	\vspace*{\fill}
-	\begin{center}\LARGE{#1}\end{center}
+	\begin{center}\LARGE{#2}\end{center}
+	#1
 	\vspace*{\fill}
 	\end{minipage}
 	\newpage
     \addcontentsline{crd}{card}
-    {\#\protect\numberline{\thecard} \truncate[ {[}\dots{]}]{0.75\textwidth}{#1}}\par
+    {\#\protect\numberline{\thecard} \truncate[ {[}\dots{]}]{0.75\textwidth}{#2}}\par
     \noindent
 	\begin{minipage}[t][0.95\textheight][t]{\textwidth}
 }
